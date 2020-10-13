@@ -33,7 +33,7 @@ exports.findByWord = async (word) => {
 exports.updateCount = async (word) => {
     try {
 
-        await Word.update({_id: word.id}, { $set: {count: word.count+ 1}});
+        await Word.updateOne({_id: word.id}, { $set: {count: word.count+ 1}});
     } catch (error) {
         console.log(error);
     }

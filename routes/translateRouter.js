@@ -63,7 +63,7 @@ router.get('/:keyword', async function (req, res, next) {
             word_net: word_net,
             collins: data.collins.collins_entries,
             sentence: data.auth_sents_part.sent,
-            phrases: data.phrs.phrs.map(p => p.phr.headword.l.i),
+            phrases: data.phrs && data.phrs.phrs && data.phrs.phrs.map(p => p.phr.headword.l.i),
             synonyms: data.syno && data.syno.synos && data.syno.synos.map(s => s.syno),
             forvo: data.forvo.items
         }
